@@ -1,0 +1,20 @@
+version: "3"
+services:
+  chrome:
+    build:
+      context: .
+      dockerfile: Dockerfile.chrome
+    ports:
+      - 4444:4444
+
+  tests:
+    build: .
+    environment:
+      TARGET_HOST: "https://google.com"
+    command: /bin/bash run.sh
+    volumes:
+      - .:/tests
+    depends_on:
+      - chrome
+    links:
+      - chrome
