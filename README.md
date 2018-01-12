@@ -32,6 +32,12 @@ This will boot the entire system and execute the tests. There's a hard sleep in 
 
 The `--exit-code-from` ensures that the pipeline picks up the exit code from the tests (pass/fail) and will force the dependant browser images to shut down (normally they'd run forever).
 
+# Writing Tests
+
+Tests go in the `spec` folder, look at `google_spec.rb` to get started.
+
+This project was intended to be opinionated about how to configure Docker, but leave everything open to you to decide how you want to write your tests. Feel free to adjust the `Gemfile` to reflect your favourite Cucumber environment, and to arrange your test code in whatever manner you see fit.
+
 # TODO
 
 I'd also like to show folks how to capture test run data and publish it in different ways. For example, publishing a run report and screenshots to an AWS S3 bucket.
